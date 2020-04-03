@@ -14,6 +14,15 @@ export const getInputContents = fileName => {
   return names.filter(royalName => royalName != "");
 };
 
+// Function to write sort result to file
+export const writeFileContents = (fileName, content) => {
+  try {
+    const data = fs.writeFileSync(path.join(__dirname, fileName), content);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 // Function to parse roman ordinal to numeric value
 const parseRomanValue = romanNumber => {
   if (romanNumber == "") {

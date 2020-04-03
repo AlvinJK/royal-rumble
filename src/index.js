@@ -1,13 +1,13 @@
 import {
   getAllInputFiles,
   getInputContents,
-  getSortedList
+  getSortedList,
+  writeFileContents
 } from "./royalRumble";
 
 const inputFiles = getAllInputFiles();
-console.log(inputFiles);
 inputFiles.map(fileName => {
   const royalNames = getInputContents(fileName);
   const sortedName = getSortedList(royalNames);
-  console.log(sortedName);
+  writeFileContents(fileName.replace("input", "output"), sortedName.join("\n"));
 });
