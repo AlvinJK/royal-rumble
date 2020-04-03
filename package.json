@@ -1,0 +1,17 @@
+{
+  "name": "royal_rumble",
+  "version": "1.0.0",
+  "description": "Royal Person with Roman Ordinal Name sorter",
+  "main": "src/index.js",
+  "author": "Alvin",
+  "license": "MIT",
+  "scripts": {
+    "start": "npx babel-node src/index.js",
+    "build": "babel src -s -d build"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.8.7",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
