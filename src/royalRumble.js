@@ -9,7 +9,8 @@ export const getAllInputFiles = () => {
 // Function to parse names from input file
 export const getInputContents = fileName => {
   const fileContent = fs.readFileSync(path.join(__dirname, fileName), "utf8");
-  const names = fileContent.split("\n");
+  // Using only \n works on my mac, but results in [firtName] [Ordinal]\r on my windows
+  const names = fileContent.split("\r\n");
   // Filter any empty string in case the input files' last line is empty string (VSCode generated txt in this case)
   return names.filter(royalName => royalName != "");
 };
